@@ -32,31 +32,31 @@ Employee.prototype.calculateSalary = function() {
   this.salary -= this.salary * 0.075; 
 }
 
-const ghazi = new Employee(1000, 'Ghazi Samer', 'Administration', 'Senior', '../profileIMG.png', 0);
+const ghazi = new Employee(1000, 'Ghazi Samer', 'Administration', 'Senior', './assets/man.png', 0);
 ghazi.calculateSalary();
 employeesArray.push(ghazi);
 
-const lana = new Employee(1001, 'Lana Ali', 'Finance', 'Senior','../profileIMG.png', 0);
+const lana = new Employee(1001, 'Lana Ali', 'Finance', 'Senior','./assets/woman.png', 0);
 lana.calculateSalary();
 employeesArray.push(lana);
 
-const tamara = new Employee(1002, 'Tamara Ayoub', 'Marketing', 'Senior', '../profileIMG.png', 0);
+const tamara = new Employee(1002, 'Tamara Ayoub', 'Marketing', 'Senior', './assets/woman.png', 0);
 tamara.calculateSalary();
 employeesArray.push(tamara);
 
-const safi = new Employee(1003, 'Safi Walid', 'Administration', 'Mid-Senior','../profileIMG.png', 0);
+const safi = new Employee(1003, 'Safi Walid', 'Administration', 'Mid-Senior','./assets/man.png', 0);
 safi.calculateSalary();
 employeesArray.push(safi);
 
-const omar = new Employee(1004, 'Omar Zaid', 'Development', 'Senior','../profileIMG.png', 0);
+const omar = new Employee(1004, 'Omar Zaid', 'Development', 'Senior','./assets/man.png', 0);
 omar.calculateSalary();
 employeesArray.push(omar);
 
-const rana = new Employee(1005, 'Rana Saleh', 'Development', 'Junior','../profileIMG.png', 0);
+const rana = new Employee(1005, 'Rana Saleh', 'Development', 'Junior','./assets/woman.png', 0);
 rana.calculateSalary();
 employeesArray.push(rana);
 
-const hadi = new Employee(1006, 'Hadi Ahmad', 'Finance', 'Mid-Senior','../profileIMG.png', 0);
+const hadi = new Employee(1006, 'Hadi Ahmad', 'Finance', 'Mid-Senior','./assets/man.png', 0);
 hadi.calculateSalary();
 employeesArray.push(hadi);
 
