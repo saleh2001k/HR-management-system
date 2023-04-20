@@ -65,38 +65,38 @@ Employee.prototype.calculateSalary = function() {
         // hadi.calculateSalary();
         // employeesArray.push(hadi);
 
-      Employee.prototype.render = function(){
+      // Employee.prototype.render = function(){
 
-        return `<div class="col-12 col-md-6 col-lg-4">
-           <div class="card cardStyle" style="width: 15rem;">
-            <img src="${this.imageURL}" class="card-img-top" alt="${this.fullName}">
-           <div class="card-body">
-          <h5 class="card-title">${this.fullName}</h5>
-          <p class="card-text">ID: ${this.employeeID}</p>
-          <p class="card-text">Department: ${this.department}</p>
-          <p class="card-text">Level: ${this.level}</p>
-          <p class="card-text">Salary: ${this.salary} $</p>
-          </div>
-          </div>
-          </div>`;
-        }
+      //   return `<div class="col-12 col-md-6 col-lg-4">
+      //      <div class="card cardStyle" style="width: 15rem;">
+      //       <img src="${this.imageURL}" class="card-img-top" alt="${this.fullName}">
+      //      <div class="card-body">
+      //     <h5 class="card-title">${this.fullName}</h5>
+      //     <p class="card-text">ID: ${this.employeeID}</p>
+      //     <p class="card-text">Department: ${this.department}</p>
+      //     <p class="card-text">Level: ${this.level}</p>
+      //     <p class="card-text">Salary: ${this.salary} $</p>
+      //     </div>
+      //     </div>
+      //     </div>`;
+      //   }
 
-        const employeeCardsContainer = document.getElementById('employee-cards');
-        let row;
+      //   const employeeCardsContainer = document.getElementById('employee-cards');
+      //   let row;
         
-           for(let i = 0; i < employeesArray.length; i++){
+      //      for(let i = 0; i < employeesArray.length; i++){
 
-           if(i % 3 === 0){
-              row = document.createElement('div');
-           row.className = 'row g-4';
-           employeeCardsContainer.appendChild(row);
-           }
+      //      if(i % 3 === 0){
+      //         row = document.createElement('div');
+      //      row.className = 'row g-4';
+      //      employeeCardsContainer.appendChild(row);
+      //      }
 
-           const col = document.createElement('div');
-           col.className = 'col-12 col-md-6 col-lg-4';
-           col.innerHTML = employeesArray[i].render();
-            row.appendChild(col);
-         }
+      //      const col = document.createElement('div');
+      //      col.className = 'col-12 col-md-6 col-lg-4';
+      //      col.innerHTML = employeesArray[i].render();
+      //       row.appendChild(col);
+      //    }
 
 
 
@@ -153,7 +153,9 @@ Employee.prototype.calculateSalary = function() {
       salary
     };
     employeesArray.push(newEmployee);
-  
+
+    localStorage.setItem('employees', JSON.stringify(employeesArray));
+
    
     renderEmployees();
   
@@ -164,9 +166,8 @@ Employee.prototype.calculateSalary = function() {
 
   function renderEmployees() {
     const employeeCardsContainer = document.getElementById('employee-cards');
-    employeeCardsContainer.innerHTML = ''; // clear the container first
+    employeeCardsContainer.innerHTML = ''; 
   
-    // group employees by department
     const employeesByDepartment = {};
     for (let employee of employeesArray) {
       if (employee.department in employeesByDepartment) {
@@ -192,7 +193,7 @@ Employee.prototype.calculateSalary = function() {
         }
   
         const col = document.createElement('div');
-        col.className = 'col-12 col-md-6 col-lg-4';
+        col.className = 'col-12 col-md-6 col-lg-4 p-2';
   
         const card = document.createElement('div');
         card.classList.add('card');
@@ -242,6 +243,19 @@ Employee.prototype.calculateSalary = function() {
       }
     }
   }
+
+
+  function loadEmployees() {
+    if (localStorage.getItem('employees')) {
+    employeesArray = JSON.parse(localStorage.getItem('employees'));
+    renderEmployees();
+    }
+    }
+    
+    loadEmployees();
+    
+        
+  
   
 
     //---------------- event section without the department spration ------------------\\
