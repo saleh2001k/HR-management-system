@@ -79,4 +79,9 @@ ul {
 	color:rgb(244, 80, 80) ;
   }
 
-  
+  .total{
+	background: rgb(60, 72, 107) !important;
+	color: #fff;
+	border:#F9D949  solid;
+  }
+
